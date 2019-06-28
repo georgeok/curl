@@ -416,6 +416,8 @@ static const struct helptxt helptext[] = {
    "Allow security flaw to improve interop"},
   {"    --ssl-no-revoke",
    "Disable cert revocation checks (Schannel)"},
+  {"    --ssl-ignore-revoke-offline",
+   "Ignore revocation offline errors (Schannel)"},
   {"    --ssl-reqd",
    "Require SSL/TLS"},
   {"-2, --sslv2",

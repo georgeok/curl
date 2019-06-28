@@ -239,6 +239,8 @@ struct OperationConfig {
   bool ssl_no_revoke;       /* disable SSL certificate revocation checks */
   /*bool proxy_ssl_no_revoke; */
 
+  bool ssl_ignore_revoke_offline; /* ignore SSL revocation offline errors */
+
   bool use_metalink;        /* process given URLs as metalink XML file */
   metalinkfile *metalinkfile_list; /* point to the first node */
   metalinkfile *metalinkfile_last; /* point to the last/current node */

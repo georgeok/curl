@@ -248,6 +248,7 @@ struct ssl_config_data {
   bit falsestart:1;
   bit enable_beast:1; /* allow this flaw for interoperability's sake*/
   bit no_revoke:1;    /* disable SSL certificate revocation checks */
+  bit ignore_revoke_offline:1; /* ignore SSL revocation offline errors */
 };
 
 struct ssl_general_config {

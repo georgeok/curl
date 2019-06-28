@@ -530,6 +530,12 @@ schannel_connect_step1(struct connectdata *conn, int sockindex)
         DEBUGF(infof(data, "schannel: disabled server certificate revocation "
                      "checks\n"));
       }
+      else if(data->set.ssl.ignore_revoke_offline) {
+        schannel_cred.dwFlags |= SCH_CRED_REVOCATION_CHECK_CHAIN |
+		  SCH_CRED_IGNORE_REVOCATION_OFFLINE;
+
+        DEBUGF(infof(data, "schannel: ignore revokation offline errors"));
+      }
       else {
         schannel_cred.dwFlags |= SCH_CRED_REVOCATION_CHECK_CHAIN;
         DEBUGF(infof(data,

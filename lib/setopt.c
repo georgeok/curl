@@ -2082,6 +2082,8 @@ static CURLcode vsetopt(struct Curl_easy *data, CURLoption option,
     data->set.ssl.enable_beast =
       (bool)((arg&CURLSSLOPT_ALLOW_BEAST) ? TRUE : FALSE);
     data->set.ssl.no_revoke = !!(arg & CURLSSLOPT_NO_REVOKE);
+    data->set.ssl.ignore_revoke_offline =
+      !!(arg & CURLSSLOPT_IGNORE_REVOKE_OFFLINE);
     break;
 
   case CURLOPT_PROXY_SSL_OPTIONS:
@@ -2089,6 +2091,8 @@ static CURLcode vsetopt(struct Curl_easy *data, CURLoption option,
     data->set.proxy_ssl.enable_beast =
       (bool)((arg&CURLSSLOPT_ALLOW_BEAST) ? TRUE : FALSE);
     data->set.proxy_ssl.no_revoke = !!(arg & CURLSSLOPT_NO_REVOKE);
+    data->set.proxy_ssl.ignore_revoke_offline =
+      !!(arg & CURLSSLOPT_IGNORE_REVOKE_OFFLINE);
     break;
 
 #endif

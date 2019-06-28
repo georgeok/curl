@@ -1482,6 +1482,8 @@ static CURLcode operate_do(struct GlobalConfig *global,
         /* new in 7.25.0 and 7.44.0 */
         {
           long mask = (config->ssl_allow_beast ? CURLSSLOPT_ALLOW_BEAST : 0) |
+                      (config->ssl_ignore_revoke_offline ?
+                        CURLSSLOPT_IGNORE_REVOKE_OFFLINE : 0) |
                       (config->ssl_no_revoke ? CURLSSLOPT_NO_REVOKE : 0);
           if(mask)
             my_setopt_bitmask(curl, CURLOPT_SSL_OPTIONS, mask);
